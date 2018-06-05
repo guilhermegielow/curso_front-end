@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    <!-- All of the Node.js APIs are available in this renderer process. -->
+    Node.js: <script>document.write(process.versions.node)</script>,
+    Chromium: <script>document.write(process.versions.chrome)</script>,
+    Electron: <script>document.write(process.versions.electron)</script>.
+	<h1 id="timer"></h1>
+	<!-- <img src="img.gif" /> -->
+
+    <script>
+      const bundle = require('./bundle.js');
+
+	  const timer = document.getElementById("timer");
+
+	  setInterval(function() {
+		timer.textContent = bundle.diff();
+	  }, 1000);
+    </script>
+  </body>
+</html>
